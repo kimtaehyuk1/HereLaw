@@ -1,5 +1,6 @@
 # AWS cloud9 쓸때 docker-compose 다운로드 및 용량 확장
 
+```
 다운로드
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 권한 부여
@@ -28,3 +29,4 @@ df -h
 주의사항
 1. EC2만들어지면 보안그룹에서 포트열기(VPC는 내 드라이브 참고)
 2. 경로 잘 확인(컨테이너 환경에서는 그 폴더로 들어와서 수행되는 것.)
+```
