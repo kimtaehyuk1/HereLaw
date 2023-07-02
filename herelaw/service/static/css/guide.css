@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css?family=BenchNine:700');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+
+/* 스플래시 이미지 */
+#main-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  object-fit: cover;
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    height: 100vh;
+    margin: 0;
+    background-color: #002060;
+    /*overflow: hidden;  스크롤이 뷰포트를 넘어가도 안나타나게 함*/
+}
+
+
+/* 로고 컨테이너 */
+#logo-text {
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+#logo-container h2 {
+    text-align: left;
+    margin-right: 0;
+    /* 간격을 없애기 위해 0으로 설정 */
+    color: white;
+}
+
+#logo-container img {
+    float: left;
+    margin-right: 10px;
+}
+
+.car-logo {
+    position: absolute;
+    z-index: 0;
+    top: 82%;
+    right: 200px;
+
+}
+
+
+
+#logo-container {
+    font-family: 'Nanum Gothic', sans-serif;
+    /* position: relative; */
+    height: 21vh;
+    margin: 0;
+    background-color: #002060;
+    color: #FFC000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 48px;
+}
+
+#guide-container {
+    background-color: #B5E0F5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(9, 49, 127, 0.5);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    /* position: relative; */
+    /* margin-top: 18px; */
+}
+
+.button {
+    font-family: 'Nanum Gothic', sans-serif;
+    /* position: relative; */
+    padding: 20px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #E4F4FC;
+    color: #595b5e;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    width: 98%;
+    height: 80px;
+    /* 원하는 높이 값으로 설정하세요 */
+    box-shadow: 0 2px 2px rgba(9, 49, 127, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+p1 {
+    font-size: 11px;
+    color: #333;
+}
+h3 {
+    font-family: 'Nanum Gothic', sans-serif;
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 800;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.8);
+
+}
+
+
+h6 {
+  font-family: 'Nanum Gothic', sans-serif;
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.8);
+
+}
+
+
+h2{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 800;
+  text-shadow: 1px 1px 1px rgba(148, 157, 252, 0.8);
+}
+h4 {
+    font-family: 'Nanum Gothic', sans-serif;
+    margin-top: 5px;
+    /* h4 요소의 위쪽 간격을 조정 */
+    color: #909396;
+}
+
+
+
+.guide-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FCFDFE;
+    width: 85%;
+    max-width: 600px;
+    height: 90%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.guide-popup .close-button {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    color: #61bcea;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.guide-popup-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.guide-popup-text {
+    font-family: 'Nanum Gothic', sans-serif;
+    /* 공통 스타일 */
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .numbered-item {
+    /* 숫자로 시작하는 문장 스타일 */
+    margin-bottom: 10px;
+    color: #002060; /* 숫자로 시작하는 문장 텍스트 색상 */
+  }
+
+  .dash-item {
+    /* "-"로 시작하는 문장 스타일 */
+    margin-bottom: 10px;
+    text-indent: -12px;
+    padding-left: 25px;
+    position: relative;
+    color: #61bcea;/* "-"로 시작하는 문장 텍스트 색상 */
+  }
+
+
+/* #agreement-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  } */
+
+/* 결과 팝업 */
+/* .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  } */
+  
+.overlay1,
+.overlay2,
+.overlay3,
+.overlay4,
+.overlay5 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.car-overlay{
+  display: none;
+}
+
+
+.popup-container {
+    font-family: 'Nanum Gothic', sans-serif;
+    position: relative;
+    background-color: #B5E0F5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(9, 49, 127, 0.5);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-width: 100%;
+    width: 95%;
+    height: 95%;
+    top: 0;
+    z-index: 1; /* .popup-container의 z-index 값 설정 */
+
+}
+
+
+.button-style {
+    display: inline-block;
+    background-color: #002060;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-style:hover {
+    background-color: #B5E0F5;
+  }
+
+  
+.small_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    z-index: 9999;
+  }
+  
+  .small_popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999999;
+  }
+  
+  .small_popup .popup-content {
+    margin-top: 20px;
+  }
+  
+  .small_popup p {
+    margin-bottom: 10px;
+  }
+  
+  .small_popup button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .small_popup button:hover {
+    background-color: #0056b3;
+  }
+  
+  .small_popup button:focus {
+    outline: none;
+  }
+#car-popup,
+#human-popup,
+#bicycle-popup,
+#motorcycle-popup,
+#highway-popup{
+    overflow: auto;
+    width: 90%;
+    height: 90%;
+}
+
+
+
+#car-popup,
+#human-popup,
+#bicycle-popup,
+#motorcycle-popup{
+    padding: 5%;
+}
+
+
+/* 도와줘요 히어로 버튼 */
+.help-button1,
+.help-button2,
+.help-button3,
+.help-button4,
+.help-button5 {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  height: 130px;
+  position: fixed;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #FFCD2D;
+  color: #002060;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 9999;
+  bottom: -130px; /* help-button이 숨겨진 위치를 지정합니다. */
+  opacity: 1;
+  border: none;
+}
+
+
+.show {
+    bottom:  45%; /* 보이는 위치로 조정 */
+    display: block;
+    z-index: 9999;
+  }
+
+
+
+
+  
+.popup-container .popup {
+    font-family: 'Nanum Gothic', sans-serif;
+    position: relative;
+    top: 20%;
+    left: 0%;
+    /* transform: translate(-50%, -50%); */
+    background-color: #FCFDFE;
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-container .close-button {
+    position: fixed;
+    top: 3%;
+    right: 6%;
+    color: #61bcea;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.popup-header {
+    font-size: 25px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
+    top: 9%;
+    left: 50%; /* 가운데 정렬 */
+    transform: translateX(-50%); /* 가운데 정렬을 위한 추가 코드 */
+    position: absolute;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.8);
+  }
+
+
+.popup-button-container {
+    font-family: 'Nanum Gothic', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.agreement-popup-paragraph,
+.guide-popup-paragraph {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+    margin-left: 30px;
+    margin-right: 10px;
+    text-align: left;
+    line-height: 1.5;
+  }
+  
+
+
+/* .guide-button {
+    padding: 10px 20px;
+    background-color: #FFCD2D;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+
+.guide-button {
+    font-family: 'Nanum Gothic', sans-serif;
+    /* position: relative; */
+    padding: 20px;
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFCD2D;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    width: 98%;
+    height: 120px;
+    /* 원하는 높이 값으로 설정하세요 */
+    box-shadow: 0 3px 3px rgba(26, 51, 101, 0.3);
+}
+
+.guide-button:hover {
+    background-color: #002060;
+}
+
+.guide-popup-text {
+    order: -1;
+}
+
+.guide-popup-paragraph {
+    margin-bottom: 20px;
+}
+
+
+.similarity-box {
+    width: 300px;
+    height: 120px;
+}
+
+.left-align {
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+.centered-text {
+    text-align: center;
+    font-size: 30px; 
+    font-weight: bold;
+    color: #002060;
+  }
+
+
+
+
+.yellow-box {
+    background-color: #FFC000;
+    padding: 10px;
+    border-radius: 15px;
+    width: 50%;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px rgba(207, 192, 80, 0.5);
+  }
+
+  
+
+  .agreement-content {
+    text-align: center;
+  }
+  
+  #download-button {
+    margin-top: 10px;
+  }
+
+  .law-popup-paragraph {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    text-align: left;
+    line-height: 1.5;
+  }
+  
+
+  /* 스크롤바 스타일 지정 */
+
+  ::-webkit-scrollbar {
+      width: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: transparent;
+  }
+  
+
+  
+  #highway {
+    background-image: url('/static/images/고속도로.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  #car{
+    background-image: url('/static/images/차대차.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+  }
+  
+
+  #bicycle {
+    background-image: url('/static/images/차대자전거.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+
+  #human {
+    background-image: url('/static/images/차대사람.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+  }
+
+  #motorcycle {
+    background-image: url('/static/images/차대오토바이.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+
+
+  #highway-guide {
+    background-image: url('/static/images/고속도로.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  #car-guide{
+    background-image: url('/static/images/차대차.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+  
+
+  #bicycle-guide {
+    background-image: url('/static/images/차대자전거.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+
+  #human-guide {
+    background-image: url('/static/images/차대사람.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  #motorcycle-guide {
+    background-image: url('/static/images/차대오토바이.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+
+
+  /* 드롭다운 */
+  .dropdown {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    width: 200px;
+  }
+  
+  .dropdown:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:focus {
+    outline: none;
+    border-color: #B5E0F5;
+    box-shadow: 0 0 3px rgba(9, 49, 127, 0.5);
+  }
+  
+  
+/* 모바일에 최적화된 예외 CSS 코드*/
+@media screen and (min-width: 350px) and (max-width:1024px) {
+    .logo-pc {
+        display: none;
+        /* 화면 너비가 767px 이하이면 숨김 */
+    }
+
+    .logo-mobile {
+        display: block;
+        /* 화면 너비가 767px 이하일 때 표시됨 */
+    }
+}

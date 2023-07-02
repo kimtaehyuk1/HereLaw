@@ -1,0 +1,1020 @@
+@import url('https://fonts.googleapis.com/css?family=BenchNine:700');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 100vh;
+  margin: 0;
+  /* 기본마진 제거하여 꽉차게 함*/
+  /*overflow: hidden;  스크롤이 뷰포트를 넘어가도 안나타나게 함*/
+}
+
+/* 스플래시 이미지 */
+#main-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  object-fit: cover;
+}
+
+
+/* 시작하기 이미지*/
+
+
+.start-container button.snip1535 {
+  margin-bottom: 20px;
+  margin: 10px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.start-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -350%);
+}
+
+.start-container div#map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.start-container p2 {
+  position: absolute;
+  top: 25%;
+  left: 28%;
+
+  /* transform: translate(-50%, -800%); */
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.start-container {
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background-image: linear-gradient(to bottom left, #70C3EC, white);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* 맨처음 시작하기 이미지 안에 버튼 */
+.snip1535 {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 18px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 20px 10px;
+  position: relative;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.snip1535:before,
+.snip1535:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+  color: #002060;
+}
+
+.snip1535:before {
+  border-color: #FFCD2D;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+
+.snip1535:after {
+  border-bottom-width: 2px;
+  border-color: #FFCD2D;
+  color: #002060;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+
+.snip1535:hover,
+.snip1535.hover {
+  background-color: #002060;
+}
+
+.snip1535:hover:before,
+.snip1535.hover:before,
+.snip1535:hover:after,
+.snip1535.hover:after {
+  height: 100%;
+  width: 100%;
+  color: #002060;
+}
+
+.snip1535 img {
+  width: 50%;
+  height: 50%;
+  margin-right: 10px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+
+
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #333;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* PC용 로고 */
+.logo-pc {
+  display: block;
+  /* 기본적으로 표시됨 */
+}
+
+/* 모바일용 로고 */
+.logo-mobile {
+  display: none;
+  /* 기본적으로 숨김 */
+}
+
+
+
+
+.user-message {
+  background-color: #FFCD2D;
+  color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 90%;
+  align-self: flex-end;
+  margin-left: auto;
+  /* box-shadow: 0 4px 15px 0 rgba(249, 249, 249, 0.5); */
+
+}
+
+.bot-message:hover,
+.user-message:hover {
+  background-color: white;
+}
+
+.bot-message {
+  background-color: white;
+  color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  max-width: 90%;
+  align-self: flex-start;
+  position: relative;
+  /* box-shadow: 0 4px 15px 0 rgba(249, 249, 249, 0.5); */
+
+}
+
+
+/* herelaw 이름 */
+/*.bot-message::before {
+ /* content: "HereLaw"; /* 표시할 텍스트 */
+/* position: absolute; /* 절대적인 위치 설정 */
+/* top: -30px; /* 위쪽으로 10px 이동 */
+/* left: 0px; /* 왼쪽으로 10px 이동 */
+/*font-size: 18px; /* 텍스트 크기 설정 */
+/* color:#333;  텍스트 색상 설정
+} */
+
+
+.chat-container {
+  display: none;
+  /* background-image: linear-gradient(to top left, #5761B2, #1FC5A8);  */
+  width: 100%;
+  height: calc(100vh - 0vh);
+  /* body 크기에 따라 자동 조정됨 */
+  margin: 0 auto;
+  border-radius: 0px;
+  padding: 5px;
+  background-color: #B5E0F5;
+}
+
+
+
+.message-container {
+  background-color: #E4F4FC;
+  margin-bottom: 20px;
+  height: 67%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: -0px 2px 15px 0 rgba(110, 194, 236, 1);
+  padding: 15px;
+}
+
+
+
+
+
+
+/* 채팅 선택 버튼 직사각형 */
+/* .option-button_1,
+.option-button_2{
+  background-color: #F4F5FA;
+  width: 130px; 
+  height: 110px; 
+  border-radius: 5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  margin-bottom: 5px;
+} */
+
+/* 선택하면 색 변경 */
+/* .option-button_1:active,
+.option-button_2:active {
+  background-color: #5761B2;
+} */
+
+
+
+
+
+
+.input-box:focus {
+  background-color: white;
+  outline: none;
+}
+
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.input-box {
+  opacity: 0.8;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 84%;
+  box-sizing: border-box;
+  /* padding과 border를 포함한 전체 크기로 설정합니다 */
+}
+
+
+/* 파일 선택 버튼 스타일 */
+.custom-upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #002060;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.custom-upload-button:hover {
+  background-color: #e0e0e0;
+}
+
+.custom-upload-button input[type="file"] {
+  display: none;
+}
+
+.preview-hidden {
+  display: none;
+}
+
+
+#image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#loading-image {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* submitpopup 안의 css */
+.user-answers-container {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup-message {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.answer {
+  font-weight: bold;
+  font-size: 25px;
+  color: #002060;
+}
+
+
+
+
+
+.submit-popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+.send-button {
+  background-color: #1FC5A8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  /* 왼쪽 여백 추가 */
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+
+/* 스크롤바 모양 */
+.message-container::-webkit-scrollbar {
+  width: 8px;
+  margin-left: 10px;
+}
+
+.message-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.message-container::-webkit-scrollbar-thumb {
+  background-color: #D0E2F4;
+  border-radius: 4px;
+}
+
+.message-container::-webkit-scrollbar-thumb:hover {
+  background-color: #A8C9EA;
+}
+
+
+
+
+
+
+/* 팝업 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  /* opacity: 0.88; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FCFDFE;
+  padding: 50px;
+  border-radius: 5px;
+  max-width: 100%;
+  width: 60%;
+  height: 70%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.popup .close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #A8C9EA;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.popup .close-btn:hover {
+  color: #002060;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.yellow-box {
+  background-color: #6D218B;
+  padding: 10px;
+  border-radius: 15px;
+  width: 40%;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.centered-text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #002060;
+}
+
+.left-text {
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+  color: #002060;
+}
+
+.left-align {
+  text-align: left;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.yellow-text {
+  margin: 0;
+}
+
+.user-answers-container {
+  background-color: #FCFDFE;
+  text-align: center;
+}
+
+
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.option-button_1,
+.option-button_2,
+.submit-button {
+  width: 100%;
+  font-size: 16px;
+  background-color: #002060;
+  color: white;
+  cursor: pointer;
+  margin: 10%;
+  height: 45px;
+  text-align: center;
+  margin-right: 10px;
+  border: 5px;
+  border-color: white;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  max-width: 90%;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+
+.option-button_1 img,
+.option-button_2 img {
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.button-container{
+  display: inline-flex; /* 인라인 플렉스 컨테이너로 설정합니다. */
+}
+
+.option-button_1,
+.option-button_2 {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.option-button_1 span,
+.option-button_2 span {
+  margin-left: 5px;
+}
+
+.option-button_1 span {
+  margin-left: 12px;
+}
+
+
+
+.option-button_1:hover,
+.option-button_2:hover{
+  background-position: 100% 0;
+  /* -moz-animation: all .4s ease-in-out; */
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.option-button_1:focus,
+.option-button_2:focus {
+  outline: none;
+
+}
+
+.option-button_1::after,
+.option-button_2::after {
+  background-color: #FFCD2D;
+}
+
+
+.submit-button {
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  border: 1px solid #002060;
+  /*테두리*/
+  color: #002060;
+  border-radius: 60px;
+
+}
+
+.custom-button{
+  background-color: transparent;
+  border: 1px solid #002060;
+  color: #002060;
+  border-radius: 60px;
+  width: 40%;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10%;
+  height: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  max-width: 90%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+
+
+
+/* reset    */
+
+/* html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+ blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+ fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+ article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
+ menu,nav,section,summary,time,mark,audio,video,fieldset {margin:0; padding:0; }
+ 
+ 
+ ol,ul{list-style:none}
+ li { list-style-type:none; }
+ table{border-collapse:collapse;border-spacing:0;}
+ img{max-width:100%;height:auto;}
+ mark{background:none}
+ select{max-width:100%;}
+ caption, legend {display:none;}
+ hr{display:none;}
+ h1,h2,h3,h4,h5,h6 { font-size:100%; }
+ address,strong{font-style:normal; font-weight:normal;}
+ table {border-collapse:collapse; }
+   */
+
+.arrow-icon {
+  width: 0.7rem;
+  /* 크기를 조정합니다. */
+  height: 0.7rem;
+  /* 크기를 조정합니다. */
+  fill: #333;
+  /* 아이콘의 색상을 설정합니다. */
+  transition: transform 0.2s ease-in-out;
+}
+
+.wrap {
+  position: absolute;
+  vertical-align: middle;
+  top: 100px;
+  left: 10px;
+}
+
+/* .wrap .arrow {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  vertical-align: middle;
+} */
+
+.wrap .arrow:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  margin-top: 5px;
+  border-top: 5px solid #333;/* 두께를 조정합니다. */
+  border-left: 5px solid #333;/* 두께를 조정합니다. */
+}
+
+.wrap .arrow-top::before {
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.wrap .arrow-down::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+
+
+
+/* 챗지피티 채팅 로딩 */
+/* .spinner {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 4px solid silver;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg) }
+} */
+
+#Agreement-picture-guide-button,
+#picture-guide-button,
+#field-guide-button,
+.toggle-button {
+  display: flex;
+  justify-content: space-between;
+  /* 아이콘과 텍스트 사이에 공간을 생성 */
+  align-items: center;
+  /* 아이콘과 텍스트를 수직 정렬 */
+  width: 100%;
+  height: 35px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  border-radius: 0px;
+  background-color: #E4F4FC;
+  border: none;
+  /* 기존의 테두리 제거 */
+  border-bottom: 1px solid #8a8989;
+  /* 테두리 하단만 설정 */
+  color: #333;
+  position: relative;
+
+
+}
+
+
+
+.toggle-button .arrow {
+  float: right;
+  position: static  ;
+  top: 50%;
+  left: 0;
+  transform: translateY(50%);
+  width: 5px;
+  height: 5px;
+}
+
+.toggle-button .arrow.top:before {
+  float: right;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+}
+
+.toggle-button .arrow.down:before {
+  float: right;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%, -50%) rotate(-135deg);
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+}
+
+p1 {
+  font-size: 15px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 400;
+  left: 35px;
+  right: 25px;
+  padding-bottom: 20px;
+}
+
+p3 {
+  font-size: 16px;
+  font-family:'Nanum Gothic', sans-serif;
+  font-weight: 800;
+  left: 35px;
+  right: 25px;
+}
+
+p4 {
+  font-size: 15px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  left: 35px;
+  right: 25px;
+  padding-bottom: 20px;
+}
+
+#agreement-content,
+#Agreement-picture-guide-content,
+#picture-guide-content,
+#field-guide-text{
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+p5 {
+  font-size: 15px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+p6 {
+  font-size: 14px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 400;
+  padding-left: 20px;
+  color: #5b5454;
+}
+
+#guide-button-container img,
+#field-guide-container img,
+#picture-guide-container img,
+#ratio-button-container img,
+#agreement-button-container img,
+#summary-button-container img,
+#lawyer-button-container img {
+  margin-right: 10px; 
+  margin-left: 10px; 
+}
+
+
+
+#picture-guide-button,
+#field-guide-button {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 35px;
+  margin-top: 15px;
+  border-radius: 0px;
+  background-color: #E4F4FC;
+  border: none;
+  color: #333;
+}
+
+
+/* 모바일에 최적화된 예외 CSS 코드*/
+@media screen and (min-width: 350px) and (max-width:1024px) {
+  .logo-pc {
+    display: none;
+    /* 화면 너비가 767px 이하이면 숨김 */
+  }
+
+  .logo-mobile {
+    display: block;
+    /* 화면 너비가 767px 이하일 때 표시됨 */
+  }
+
+  body {
+    height: 87vh;
+    /* 원하는 높이로 조정 */
+  }
+
+  .chat-header {
+
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #333;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message-container {
+    background-color: #E4F4FC;
+    margin-bottom: 20px;
+    height: calc(100vh - 20vh);
+    /* body 크기에 따라 자동 조정됨 */
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: -0px 2px 15px 0 rgba(110, 194, 236, 1);
+    padding: 15px;
+  }
+
+  .chat-container {
+    display: none;
+    /* background-image: linear-gradient(to top left, #5761B2, #1FC5A8);  */
+    width: 100%;
+    height: calc(100vh - 0vh);
+    /* body 크기에 따라 자동 조정됨 */
+    margin: 0 auto;
+    border-radius: 0px;
+    padding: 5px;
+    background-color: #B5E0F5;
+  }
+
+  .input-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .input-box {
+    opacity: 0.8;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    /* padding과 border를 포함한 전체 크기로 설정합니다 */
+    font-size: 14px;
+    /* 텍스트 크기를 14로 설정 */
+  }
+
+  .send-button {
+    display: none;
+  }
+
+  /* submitpopup 안의 css */
+  .answer {
+    font-weight: bold;
+    font-size: 20px;
+    color: #002060;
+  }
+
+  .submit-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .popup-message {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 10px;
+    /* 추가: 메시지 간격 설정 */
+    margin-top: 50px;
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FCFDFE;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 90%;
+    height: 70%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-answers-container {
+    background-color: #FCFDFE;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* 수정: 컨테이너가 자동으로 늘어나도록 flex 속성 추가 */
+    min-height: 250px;
+    /* overflow-y: scroll ; */
+  }
+
+  p {
+    padding: 20px;
+  }
+}

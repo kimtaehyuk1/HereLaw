@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HereLaw guide</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1,width=device-width" />
+  <!-- <meta name="viewport" content="height=device-height, initial-scale=1"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="../static/css/guide.css" />
+  <style>
+    @import url("../static/css/guide.css") screen and (min-width: 350px) and (max-width:1024px);
+  </style>
+</head>
+
+<body>
+  <!-- <div id="main-image-container">
+    <img src="static/images/메인 이미지_로고_가로_v4.png" alt="loading">
+  </div> -->
+
+  
+  <div id="logo-container">
+    <div id="logo-text">
+      <img src="../static/images/자동차그림_노랑.png" width="120px;" alt="자동차 그림" class="car-logo">
+
+      <H2>
+        HereLaw의 사고대응가이드
+      </H2>
+    </div>
+  </div>
+
+
+  <div id="guide-container">
+    <div class="button-container">
+      <button class="button" id="highway" onclick="HighwayPopup()">
+        <h3>고속도로</h3>
+      </button>
+
+
+      <button class="button" id="car" onclick="CarPopup()">
+        <h3>차 vs 차</h3>
+      </button>
+
+      <button class="button" id="human" onclick="HumanPopup()">
+        <h3>차 vs 사람</h3>
+      </button>
+
+      
+      <button class="button" id="motorcycle" onclick="MotorcyclePopup()">
+        <h3>차 vs 오토바이</h3>
+      </button>
+
+      <button class="button" id="bicycle" onclick="BicyclePopup()">
+        <h3>차 vs 자전거</h3>
+      </button>
+
+    </div>
+
+
+
+
+    <div class="overlay1" id="highway-overlay">
+        <div class="popup-container" id="highway-guide">
+          <div class='popup-header'> 고속도로 가이드</div>
+          <div class="popup">
+            <div id="highway-popup">
+              <span class="close-button">&times;</span>
+              <div class='highway-popup-text'>
+                <p class="guide-popup-paragraph">
+                </p>
+                <!-- 팝업 내용 -->
+                <div class="react-box">
+                  <p class="yellow-box">현장 행동가이드</p></div>
+                <div class="numbered-item">1. 비상등켜기, 트렁크열기</div>
+                <div class="numbered-item">2. 안전한 곳으로 차량 이동</div>
+                <div class="dash-item">- 터널이라면, 비상 주차대로 차량을 이동</div>
+                <div class="numbered-item">3. 후방에 안전 삼각대 설치</div>
+                <div class="dash-item">- 주간: 100m 후방</div>
+                <div class="dash-item">- 야간: 섬광 신호, 200m 후방</div>
+                <div class="numbered-item">4. 도로(가드레일) 밖으로 대피</div>
+                <div class="dash-item">- 터널이라면, 피난연결통로로 대피</div>
+                <div class="numbered-item">5. 기관에 신고</div>
+                <div class="dash-item">보험사 번호: <select id="insurance-company" class="dropdown">
+                    <option value="insurance">AXA손해보험: 1566-1566</option>
+                    <option value="insurance">DB손해보험: 1588-0100</option>
+                    <option value="insurance">KB손해보험: 1544-0114</option>
+                    <option value="insurance">MG손해보험: 1588-5959</option>
+                    <option value="insurance">The-K 손해보험(하나손해보험): 1566-3000</option>
+                    <option value="insurance">롯데손해보험: 1588-3344</option>
+                    <option value="insurance">메리츠화재: 1566-7711</option>
+                    <option value="insurance">삼성화재: 1588-5114</option>
+                    <option value="insurance">캐롯손해보험: 1566-3000</option>
+                    <option value="insurance">현대해상: 1588-5656</option>
+                    <option value="insurance">한화손해보험: 1566-8000</option>
+                    <option value="insurance">흥국화재: 1688-1688</option>
+                  </select>
+                </div>
+                  <div class="dash-item">한국도로공사: 1588-2504 </br></div>
+                  <div class="dash-item">
+                    <button onclick="showPopup_1('emergencyTowingPopup')" class="button-style">긴급견인서비스</button>
+                  </div>
+                  <div id="emergencyTowingPopup" class="small_popup" style="display: none;">
+                    <div class="popup-content">
+                      <span class="close" onclick="hidePopup_1('emergencyTowingPopup')" > &times;</span>
+                      <p>한국도로공사의 2504 긴급견인 서비스란?  </br></br>
+                        - 고속도로 본선, 갓길에 멈춰 2차 사고가 우려되는 소형차량을 안전지대까지 견인하는 제도로 안전지대까지의 견인비용은 한국도로공사가 부담합니다. </br>
+                        소형차량 : 승용차, 16인 이하 승합차, 14톤 이하 화물차 </br>
+                        안전지대 : 현장에서 가장 가까운 휴게소, 영업소, 졸음쉼터 등 </br>
+                        - 견인이 필요한 경우라면, 고속도로 무료 '2504 긴급견인 서비스'(1588-2504)를 이용하세요</p>
+                    </div>
+                  </div>
+                  <div class="dash-item">소방서: 119</br></div>
+                  <div class="dash-item">경찰서: 112</br></div>
+                  <div class="dash-item">
+                    <button onclick="showPopup_2('trafficOffensePopup')" class="button-style">12대 중과실</button>일 경우, 반드시 경찰서 접수
+                  </div>
+                  <div id="trafficOffensePopup" class="small_popup" style="display: none;">
+                    <div class="popup-content">
+                      <span class="close" onclick="hidePopup_2('trafficOffensePopup')">&times;</span>
+                      <p>12대 중과실이란? </br>
+                      </br>
+                        1. 신호 위반 </br>
+                        2. 중앙선 침범 </br>
+                        3. 제한 속도보다 20km 초과하여 과속 </br>
+                        4. 앞지르기 방법, 금지시기, 금지장소 또는 끼어들기의 금지를 위반 </br>
+                        5. 철길 건널목 통과 방법 위반 </br>
+                        6. 횡단보도에서의 보행자 보호의무 위반 </br>
+                        7. 무면허 운전 </br>
+                        8. 음주 운전 </br>
+                        9. 보도를 침범 </br>
+                        10. 승객 추락 방지 의무 위반 </br>
+                        11. 어린이 보호구역 안전의무 위반 </br>
+                        12. 자동차 화물이 떨어지지 않도록 필요한 조치를 하지 않고 운전</p>
+                    </div>
+                  </div>
+                <div class="numbered-item">6. 교통사고 증거 확보</br></div>
+                <div class="dash-item">- 아래의 '사진 가이드' 참고</br></div>
+                <div class="photo-box">
+                  <p class="yellow-box">사진 가이드</p>
+                  <div class="numbered-item"> 1. 사고 현장 전체 샷 촬영</br></div>
+                    <div class="numbered-item"> 2. 돌아간 타이어 방향 촬영</br></div>
+                    <div class="numbered-item">3. 상대 차량의 블랙박스 유무 촬영</br></div>
+                    <div class="numbered-item">4. 차량 번호판 촬영</br></div>
+                    <div class="numbered-item">5. 파손 부위 확대 촬영</br></div>
+                    <div class="numbered-item">6. "교통사고 신속 처리 대응 협의서" 작성을 위한 차량 촬영: </br></div>
+                  <div class="dash-item">- 전면</br></div>
+                    <div class="dash-item">- 후면</br></div>
+                        <div class="dash-item">- 우측면</br></div>
+                            <div class="dash-item">- 좌측면</br></div>
+                </div>
+
+                <div class="upload-container">
+                  <input type="file" id="photoUpload1" multiple onchange="imageChange()" style="display: none;">
+                  <label for="photoUpload1" class="button-style">사진 업로드</label>
+                  <img id="preview" src=""  style="max-width: 200px;">
+                  <div id="imageContainer1"></div>
+                </div>
+                
+                
+
+            </div>
+
+            <button class="help-button1" id="highway_button" ><h3>도와줘요 HereLaw!!</h3>
+              사고 대처 진행하기
+            </button>
+          </div>
+          <p1>본 자료는 참고용입니다.</p1>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+      <div class="overlay2" id="car-overlay">
+        <div class="popup-container" id="car-guide">
+          <div class='popup-header' > 차 대 차 가이드</div>
+          <div class="popup">
+            <div id="car-popup">
+              <span class="close-button">&times;</span>
+              <div class='car-popup-text'>
+                <p class="car-guide-popup-paragraph">
+                </p>
+                <!-- 팝업 내용 -->
+                <div class="react-box">
+                  <p class="yellow-box">현장 행동가이드</p></div>
+                <div class="numbered-item">1. 탑승자 안전 확인</div>
+                <div class="dash-item">- 심각한 부상자는 옮기지 말 것</div>
+                <div class="numbered-item">2. 안전한 곳으로 차량 이동</div>
+                <div class="dash-item">- 경미한 부상이라도, 상대방의 인적사항 확보</div>
+                <div class="numbered-item">3. 후방에 안전 삼각대 설치</div>
+                <div class="dash-item">- 주간: 100m 후방</div>
+                <div class="dash-item">- 야간: 섬광 신호, 200m 후방</div>
+                <div class="numbered-item">4. 기관에 신고</div>
+                <div class="dash-item">보험사 번호: <select id="insurance-company" class="dropdown">
+                    <option value="insurance">AXA손해보험: 1566-1566</option>
+                    <option value="insurance">DB손해보험: 1588-0100</option>
+                    <option value="insurance">KB손해보험: 1544-0114</option>
+                    <option value="insurance">MG손해보험: 1588-5959</option>
+                    <option value="insurance">The-K 손해보험(하나손해보험): 1566-3000</option>
+                    <option value="insurance">롯데손해보험: 1588-3344</option>
+                    <option value="insurance">메리츠화재: 1566-7711</option>
+                    <option value="insurance">삼성화재: 1588-5114</option>
+                    <option value="insurance">캐롯손해보험: 1566-3000</option>
+                    <option value="insurance">현대해상: 1588-5656</option>
+                    <option value="insurance">한화손해보험: 1566-8000</option>
+                    <option value="insurance">흥국화재: 1688-1688</option>
+                  </select>
+                </div>
+                  <div class="dash-item">한국도로공사: 1588-2504 </br></div>
+                  <div class="dash-item">
+                    <button onclick="showPopup_1('emergencyTowingPopup')" class="button-style">긴급견인서비스</button>
+                  </div>
+                  <div id="emergencyTowingPopup" class="small_popup" style="display: none;">
+                    <div class="popup-content">
+                      <span class="close" onclick="hidePopup_1('emergencyTowingPopup')">&times;</span>
+                      <p>한국도로공사의 2504 긴급견인 서비스란?  </br></br>
+                        - 고속도로 본선, 갓길에 멈춰 2차 사고가 우려되는 소형차량을 안전지대까지 견인하는 제도로 안전지대까지의 견인비용은 한국도로공사가 부담합니다. </br>
+                        소형차량 : 승용차, 16인 이하 승합차, 14톤 이하 화물차 </br>
+                        안전지대 : 현장에서 가장 가까운 휴게소, 영업소, 졸음쉼터 등 </br>
+                        - 견인이 필요한 경우라면, 고속도로 무료 '2504 긴급견인 서비스'(1588-2504)를 이용하세요</p>
+                    </div>
+                  </div>
+                  <div class="dash-item">소방서: 119</br></div>
+                  <div class="dash-item">경찰서: 112</br></div>
+                  <div class="dash-item">
+                    <button onclick="showPopup_2('trafficOffensePopup')" class="button-style">12대 중과실</button>일 경우, 반드시 경찰서 접수
+                  </div>
+                  <div id="trafficOffensePopup" class="small_popup" style="display: none;">
+                    <div class="popup-content">
+                      <span class="close" onclick="hidePopup_2('trafficOffensePopup')">&times;</span>
+                      <p>12대 중과실이란? </br></br>
+                        1. 신호 위반 </br>
+                        2. 중앙선 침범 </br>
+                        3. 제한 속도보다 20km 초과하여 과속 </br>
+                        4. 앞지르기 방법, 금지시기, 금지장소 또는 끼어들기의 금지를 위반 </br>
+                        5. 철길 건널목 통과 방법 위반 </br>
+                        6. 횡단보도에서의 보행자 보호의무 위반 </br>
+                        7. 무면허 운전 </br>
+                        8. 음주 운전 </br>
+                        9. 보도를 침범 </br>
+                        10. 승객 추락 방지 의무 위반 </br>
+                        11. 어린이 보호구역 안전의무 위반 </br>
+                        12. 자동차 화물이 떨어지지 않도록 필요한 조치를 하지 않고 운전</p>
+                    </div>
+                  </div>
+                <div class="numbered-item">5. 교통사고 증거 확보</br></div>
+                <div class="dash-item">- 아래의 '사진 가이드' 참고</br></div>
+                <div class="photo-box">
+                  <p class="yellow-box">사진 가이드</p>
+                  <div class="numbered-item"> 1. 사고 현장 전체 샷 촬영</br></div>
+                    <div class="numbered-item"> 2. 돌아간 타이어 방향 촬영</br></div>
+                    <div class="numbered-item">3. 상대 차량의 블랙박스 유무 촬영</br></div>
+                    <div class="numbered-item">4. 차량 번호판 촬영</br></div>
+                    <div class="numbered-item">5. 파손 부위 확대 촬영</br></div>
+                    <div class="numbered-item">6. "교통사고 신속 처리 대응 협의서" 작성을 위한 차량 촬영: </br></div>
+                  <div class="dash-item">- 전면</br></div>
+                    <div class="dash-item">- 후면</br></div>
+                        <div class="dash-item">- 우측면</br></div>
+                            <div class="dash-item">- 좌측면</br></div>
+                </div>
+
+                <div class="upload-container">
+                  <input type="file" id="photoUpload2" multiple onchange="imageChange()" style="display: none;">
+                  <label for="photoUpload2" class="button-style">사진 업로드</label>
+                  <img id="preview" src=""  style="max-width: 200px;">
+                  <div id="imageContainer2"></div>
+                </div>
+                
+            </div>
+
+            <button class="help-button2" id="car_button"><h3>도와줘요 HereLaw!!</h3>
+              사고 대처 진행하기
+            </button>
+          </div>
+          <p1>본 자료는 참고용입니다.</p1>
+        </div>
+      </div>
+    </div>
+
+
+
+      <div class="overlay3" id="bicycle-overlay">
+        <div class="popup-container" id="bicycle-guide">
+          <div class='popup-header'> 차 대 자전거 가이드</div>
+          <div class="popup">
+            <div id="bicycle-popup">
+              <span class="close-button">&times;</span>
+              <div class='bicycle-popup-text'>
+                <p class="bicycle-guide-popup-paragraph">
+                </p>
+                <!-- 팝업 내용 -->
+                <div class="react-box">
+                  <p class="yellow-box">현장 행동가이드</p></div>
+                <div class="numbered-item">1. 탑승자 안전 확인</div>
+                <div class="dash-item">- 심각한 부상자는 옮기지 말 것</div>
+                <div class="numbered-item">2. 안전한 곳으로 차량 이동</div>
+                <div class="dash-item">- 경미한 부상이라도, 상대방의 인적사항 확보</div>
+                <div class="numbered-item">3. 기관에 신고</div>
+                <div class="dash-item">보험사 번호: <select id="insurance-company" class="dropdown">
+                    <option value="insurance">AXA손해보험: 1566-1566</option>
+                    <option value="insurance">DB손해보험: 1588-0100</option>
+                    <option value="insurance">KB손해보험: 1544-0114</option>
+                    <option value="insurance">MG손해보험: 1588-5959</option>
+                    <option value="insurance">The-K 손해보험(하나손해보험): 1566-3000</option>
+                    <option value="insurance">롯데손해보험: 1588-3344</option>
+                    <option value="insurance">메리츠화재: 1566-7711</option>
+                    <option value="insurance">삼성화재: 1588-5114</option>
+                    <option value="insurance">캐롯손해보험: 1566-3000</option>
+                    <option value="insurance">현대해상: 1588-5656</option>
+                    <option value="insurance">한화손해보험: 1566-8000</option>
+                    <option value="insurance">흥국화재: 1688-1688</option>
+                  </select>
+                </div>
+                  <div class="dash-item">소방서: 119</br></div>
+                  <div class="dash-item">경찰서: 112</br></div>
+                  
+                <div class="numbered-item">4. 교통사고 증거 확보</br></div>
+                <div class="dash-item">- 아래의 '사진 가이드' 참고</br></div>
+                <div class="photo-box">
+                  <p class="yellow-box">사진 가이드</p>
+                  <div class="numbered-item"> 1. 사고 현장 전체 샷 촬영</br></div>
+                    <div class="numbered-item"> 2. 돌아간 타이어 방향 촬영</br></div>
+                    <div class="numbered-item">3. 상대 차량의 블랙박스 유무 촬영</br></div>
+                    <div class="numbered-item">4. 차량 번호판 촬영</br></div>
+                    <div class="numbered-item">5. 파손 부위 확대 촬영</br></div>
+                    <div class="numbered-item">6. "교통사고 신속 처리 대응 협의서" 작성을 위한 차량 촬영: </br></div>
+                  <div class="dash-item">- 전면</br></div>
+                    <div class="dash-item">- 후면</br></div>
+                        <div class="dash-item">- 우측면</br></div>
+                            <div class="dash-item">- 좌측면</br></div>
+                </div>
+
+                <div class="upload-container">
+                  <input type="file" id="photoUpload5" multiple onchange="imageChange()" style="display: none;">
+                  <label for="photoUpload" class="button-style">사진 업로드</label>
+                  <img id="preview" src=""  style="max-width: 200px;">
+                  <div id="imageContainer5"></div>
+                </div>
+
+            </div>
+
+            <button class="help-button5" id="bicycle_button"><h3>도와줘요 HereLaw!!</h3>
+              사고 대처 진행하기
+            </button>
+          </div>
+          <p1>본 자료는 참고용입니다.</p1>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="overlay4" id="human-overlay">
+        <div class="popup-container" id="human-guide">
+          <div class='popup-header' > 차 대 사람 가이드</div>
+          <div class="popup">
+            <div id="human-popup">
+              <span class="close-button">&times;</span>
+              <div class='human-popup-text'>
+                <p class="bicycle-guide-popup-paragraph">
+                </p>
+                <!-- 팝업 내용 -->
+                <div class="react-box">
+                  <p class="yellow-box">현장 행동가이드</p></div>
+                <div class="numbered-item">1. 상대방 안전 확인</div>
+                <div class="dash-item">- 경미한 부상이라도, 상대방의 인적사항 확보</div>
+                <div class="numbered-item">2. 응급 서비스 호출 및 조치</div>
+                <div class="dash-item">소방서: 119</br></div>
+                <div class="dash-item">- 다친 사람에게는 응급처치를 시도하지 마시고, 전문 의료인이 도착할 때까지 대기</div>
+                <div class="numbered-item">3. 경찰에 신고</div>
+                <div class="dash-item">경찰서: 112</br></div>
+                <div class="dash-item">
+                  <button onclick="showPopup_2('trafficOffensePopup')" class="button-style">12대 중과실</button>일 경우, 반드시 경찰서 접수
+                </div>
+                <div id="trafficOffensePopup" class="small_popup" style="display: none;">
+                  <div class="popup-content">
+                    <span class="close" onclick="hidePopup_2('trafficOffensePopup')" class="button-style">&times;</span>
+                    <p>12대 중과실이란? </br></br>
+                      1. 신호 위반 </br>
+                      2. 중앙선 침범 </br>
+                      3. 제한 속도보다 20km 초과하여 과속 </br>
+                      4. 앞지르기 방법, 금지시기, 금지장소 또는 끼어들기의 금지를 위반 </br>
+                      5. 철길 건널목 통과 방법 위반 </br>
+                      6. 횡단보도에서의 보행자 보호의무 위반 </br>
+                      7. 무면허 운전 </br>
+                      8. 음주 운전 </br>
+                      9. 보도를 침범 </br>
+                      10. 승객 추락 방지 의무 위반 </br>
+                      11. 어린이 보호구역 안전의무 위반 </br>
+                      12. 자동차 화물이 떨어지지 않도록 필요한 조치를 하지 않고 운전</p>
+                  </div>
+                </div>
+                <div class="numbered-item">4. 보험사에 신고</div>
+                <div class="dash-item">보험사 번호: <select id="insurance-company" class="dropdown">
+                    <option value="insurance">AXA손해보험: 1566-1566</option>
+                    <option value="insurance">DB손해보험: 1588-0100</option>
+                    <option value="insurance">KB손해보험: 1544-0114</option>
+                    <option value="insurance">MG손해보험: 1588-5959</option>
+                    <option value="insurance">The-K 손해보험(하나손해보험): 1566-3000</option>
+                    <option value="insurance">롯데손해보험: 1588-3344</option>
+                    <option value="insurance">메리츠화재: 1566-7711</option>
+                    <option value="insurance">삼성화재: 1588-5114</option>
+                    <option value="insurance">캐롯손해보험: 1566-3000</option>
+                    <option value="insurance">현대해상: 1588-5656</option>
+                    <option value="insurance">한화손해보험: 1566-8000</option>
+                    <option value="insurance">흥국화재: 1688-1688</option>
+                  </select>
+                </div>
+
+                <div class="numbered-item">5. 교통사고 증거 확보</br></div>
+                <div class="dash-item">- 아래의 '사진 가이드' 참고</br></div>
+                <div class="photo-box">
+                  <p class="yellow-box">사진 가이드</p>
+                  <div class="numbered-item"> 1. 사고 현장 전체 샷 촬영</br></div>
+                    <div class="numbered-item"> 2. 돌아간 타이어 방향 촬영</br></div>
+                    <div class="numbered-item">3. 상대 차량의 블랙박스 유무 촬영</br></div>
+                    <div class="numbered-item">4. 차량 번호판 촬영</br></div>
+                    <div class="numbered-item">5. 파손 부위 확대 촬영</br></div>
+                    <div class="numbered-item">6. "교통사고 신속 처리 대응 협의서" 작성을 위한 차량 촬영: </br></div>
+                  <div class="dash-item">- 전면</br></div>
+                    <div class="dash-item">- 후면</br></div>
+                        <div class="dash-item">- 우측면</br></div>
+                            <div class="dash-item">- 좌측면</br></div>
+                </div>
+
+                <div class="upload-container">
+                  <input type="file" id="photoUpload3" multiple onchange="imageChange()" style="display: none;">
+                  <label for="photoUpload3" class="button-style">사진 업로드</label>
+                  <img id="preview" src=""  style="max-width: 200px;">
+                  <div id="imageContainer3"></div>
+                </div>
+                
+
+            </div>
+
+            <button class="help-button3" id="human_button"><h3>도와줘요 HereLaw!!</h3>
+              사고 대처 진행하기
+            </button>
+          </div>
+          <p1>본 자료는 참고용입니다.</p1>
+        </div>
+      </div>
+    </div>
+
+
+
+      
+    <div class="overlay5" id="motorcycle-overlay">
+      <div class="popup-container" id="motorcycle-guide">
+        <div class='popup-header'> 차 대 오토바이 가이드 </div>
+        <div class="popup">
+          <div id="motorcycle-popup">
+            <span class="close-button">&times;</span>
+            <div class='motorcycle-popup-text'>
+              <p class="motorcycle-guide-popup-paragraph">
+              </p>
+              <!-- 팝업 내용 -->
+              <div class="react-box">
+                <p class="yellow-box">현장 행동가이드</p></div>
+              <div class="numbered-item">1. 비상등켜기, 트렁크열기</div>
+              <div class="numbered-item">2. 안전한 곳으로 차량 이동</div>
+              <div class="numbered-item">3. 기관에 신고</div>
+              <div class="dash-item">보험사 번호: <select id="insurance-company" class="dropdown">
+                  <option value="insurance">AXA손해보험: 1566-1566</option>
+                  <option value="insurance">DB손해보험: 1588-0100</option>
+                  <option value="insurance">KB손해보험: 1544-0114</option>
+                  <option value="insurance">MG손해보험: 1588-5959</option>
+                  <option value="insurance">The-K 손해보험(하나손해보험): 1566-3000</option>
+                  <option value="insurance">롯데손해보험: 1588-3344</option>
+                  <option value="insurance">메리츠화재: 1566-7711</option>
+                  <option value="insurance">삼성화재: 1588-5114</option>
+                  <option value="insurance">캐롯손해보험: 1566-3000</option>
+                  <option value="insurance">현대해상: 1588-5656</option>
+                  <option value="insurance">한화손해보험: 1566-8000</option>
+                  <option value="insurance">흥국화재: 1688-1688</option>
+                </select>
+              </div>
+                <div class="dash-item">소방서: 119</br></div>
+                <div class="dash-item">경찰서: 112</br></div>
+                <div class="dash-item">                    
+                  <button onclick="showPopup_2('trafficOffensePopup')" class="button-style">12대 중과실</button>일 경우, 반드시 경찰서 접수
+                </div>
+                <div id="trafficOffensePopup" class="small_popup" style="display: none;">
+                  <div class="popup-content">
+                    <span class="close" onclick="hidePopup_2('trafficOffensePopup')">&times;</span>
+                    <p>12대 중과실이란? </br></br>
+                      1. 신호 위반 </br>
+                      2. 중앙선 침범 </br>
+                      3. 제한 속도보다 20km 초과하여 과속 </br>
+                      4. 앞지르기 방법, 금지시기, 금지장소 또는 끼어들기의 금지를 위반 </br>
+                      5. 철길 건널목 통과 방법 위반 </br>
+                      6. 횡단보도에서의 보행자 보호의무 위반 </br>
+                      7. 무면허 운전 </br>
+                      8. 음주 운전 </br>
+                      9. 보도를 침범 </br>
+                      10. 승객 추락 방지 의무 위반 </br>
+                      11. 어린이 보호구역 안전의무 위반 </br>
+                      12. 자동차 화물이 떨어지지 않도록 필요한 조치를 하지 않고 운전</p>
+                  </div>
+                </div>
+              <div class="numbered-item">4. 교통사고 증거 확보</br></div>
+              <div class="dash-item">- 아래의 '사진 가이드' 참고</br></div>
+              <div class="photo-box">
+                <p class="yellow-box">사진 가이드</p>
+                <div class="numbered-item"> 1. 사고 현장 전체 샷 촬영</br></div>
+                  <div class="numbered-item"> 2. 돌아간 타이어 방향 촬영</br></div>
+                  <div class="numbered-item">3. 상대 차량의 블랙박스 유무 촬영</br></div>
+                  <div class="numbered-item">4. 차량 번호판 촬영</br></div>
+                  <div class="numbered-item">5. 파손 부위 확대 촬영</br></div>
+                  <div class="numbered-item">6. "교통사고 신속 처리 대응 협의서" 작성을 위한 차량 촬영: </br></div>
+                <div class="dash-item">- 전면</br></div>
+                  <div class="dash-item">- 후면</br></div>
+                      <div class="dash-item">- 우측면</br></div>
+                          <div class="dash-item">- 좌측면</br></div>
+              </div>
+              <div class="upload-container">
+                <input type="file" id="photoUpload4" multiple onchange="imageChange()" style="display: none;">
+                <label for="photoUpload4" class="button-style">사진 업로드</label>
+                <img id="preview" src=""  style="max-width: 200px;">
+                <div id="imageContainer4"></div>
+              </div>
+              
+
+          </div>
+
+          <button class="help-button4" id="motorcycle_button" ><h6>도와줘요 HereLaw!!</h6>
+            사고 대처 진행하기
+          </button>
+        </div>
+        <p1>본 자료는 참고용입니다.</p1>
+      </div>
+    </div>
+  </div>
+
+
+      
+</body>
+<script src="../static/guide.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // 파일 업로드 이벤트 핸들러 등록
+  $("#photoUpload1").change(function() {
+    var fileInput = document.getElementById("photoUpload1");
+    if (fileInput && fileInput.files && fileInput.files.length > 0) {
+      $("#highway_button").addClass("show");
+    } else {
+      $("#highway_button").removeClass("show");
+    }
+  });
+});
+
+
+$(document).ready(function() {
+  // 파일 업로드 이벤트 핸들러 등록
+  $("#photoUpload2").change(function() {
+    var fileInput = document.getElementById("photoUpload2");
+    if (fileInput && fileInput.files && fileInput.files.length > 0) {
+      $("#car_button").addClass("show");
+
+      imageChange(); // 이미지 미리보기 업데이트
+      console.log("이미지 미리보기떴당 ")
+    } else {
+      $("#car_button").removeClass("show");
+    }
+  });
+});
+
+
+$(document).ready(function() {
+  // 파일 업로드 이벤트 핸들러 등록
+  $("#photoUpload3").change(function() {
+    var fileInput = document.getElementById("photoUpload3");
+    if (fileInput && fileInput.files && fileInput.files.length > 0) {
+      $("#human_button").addClass("show");
+
+      imageChange(); 
+    } else {
+      $("#human_button").removeClass("show");
+    }
+  });
+});
+
+
+
+
+$(document).ready(function() {
+  // 파일 업로드 이벤트 핸들러 등록
+  $("#photoUpload4").change(function() {
+    var fileInput = document.getElementById("photoUpload4");
+    if (fileInput && fileInput.files && fileInput.files.length > 0) {
+      $("#motorcycle_button").addClass("show");
+
+      imageChange(); 
+    } else {
+      $("#motorcycle_button").removeClass("show");
+    }
+  });
+});
+
+
+
+$(document).ready(function() {
+  // 파일 업로드 이벤트 핸들러 등록
+  $("#photoUpload5").change(function() {
+    var fileInput = document.getElementById("photoUpload5");
+    if (fileInput && fileInput.files && fileInput.files.length > 0) {
+      $("#bicycle_button").addClass("show");
+
+      imageChange(); 
+    } else {
+      $("#bicycle_button").removeClass("show");
+    }
+  });
+});
+
+function imageChange() {
+let imageContainers = [
+  document.getElementById('imageContainer1'),
+  document.getElementById('imageContainer2'),
+  document.getElementById('imageContainer3'),
+  document.getElementById('imageContainer4'),
+  document.getElementById('imageContainer5')
+];
+
+let fileInputs = [
+  document.getElementById('photoUpload1'),
+  document.getElementById('photoUpload2'),
+  document.getElementById('photoUpload3'),
+  document.getElementById('photoUpload4'),
+  document.getElementById('photoUpload5')
+];
+
+for (let j = 0; j < fileInputs.length; j++) {
+  let fileInput = fileInputs[j];
+  let files = fileInput.files;
+
+  for (let i = 0; i < files.length; i++) {
+    let img = document.createElement('img');
+    img.style.maxWidth = '250px'; // 이미지의 최대 너비 설정
+
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      img.setAttribute('src', event.target.result);
+      let imageContainer = imageContainers[j];
+      imageContainer.innerHTML = ''; // 이전의 미리보기 이미지 삭제
+      imageContainer.appendChild(img); // 새로운 이미지 추가
+
+      // 이미지 미리보기가 나타났을 때 스크롤을 가장 아래로 이동
+      $("#highway-popup").scrollTop($("#highway-popup").prop("scrollHeight"));
+      $("#car-popup").scrollTop($("#car-popup").prop("scrollHeight"));
+      $("#human-popup").scrollTop($("#human-popup").prop("scrollHeight"));
+      $("#bicycle-popup").scrollTop($("#bicycle-popup").prop("scrollHeight"));
+      $("#motorcycle-popup").scrollTop($("#motorcycle-popup").prop("scrollHeight"));
+    };
+    reader.readAsDataURL(files[i]);
+  }
+}
+}
+
+
+
+
+
+
+
+</script>
+
+
+</html>

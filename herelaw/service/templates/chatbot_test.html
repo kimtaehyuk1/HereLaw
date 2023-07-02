@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HereLaw!!!!</title>
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1,width=device-width" />
+  <!-- <meta name="viewport" content="height=device-height, initial-scale=1"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  <style>
+    @import url("static/css/style.css") screen and (min-width: 350px) and (max-width:1024px);
+  </style>
+  <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
+
+</head>
+
+
+<body>
+   <div id="main-image-container">
+    <img src="static/images/메인 이미지_로고_가로_v4.png" alt="loading">
+  </div>
+  <div class="start-container" style="display : block;">
+
+    <img src="static/images/herelaw logo_v3_mobile.png">
+    <p2> 지금 사고가 난 지역입니다. </p2>
+    <div id="map" style="width:60%;height:20%;"></div>
+    <button class="snip1535"> HereLaw 시작하기</button>
+
+  </div>
+
+  <div class="wrap">
+    <i class="arrow top" role="img" style="display: none;"></i>
+    <i class="arrow down" role="img" style="display: none;"></i>
+  </div>
+
+  <!-- 처음 이미지 로딩시 인풋과 챗컨테이너는 none;으로 해놓기 -->
+  <div class="chat-container" style="display : block;">
+    <h1 class="chat-header">
+      <a href="/">
+
+        <!-- <img src="{{ url_for('static', filename='images/herelaw logo_v3.png') }}" alt="Chatbot 로고"> -->
+        <!-- PC용 로고 -->
+        <img src="static/images/herelaw logo_v3.png" alt="Chatbot 로고" class="logo-pc">
+        <!-- 모바일용 로고 -->
+        <img src="static/images/herelaw logo_v3_mobile.png" alt="Chatbot 로고" class="logo-mobile">
+
+
+      </a>
+    </h1>
+    <div class="wrap">
+      <i class="arrow top" role="img" style="display: none;"></i>
+      <i class="arrow down" role="img" style="display: none;"></i>
+    </div>
+    <div id="output" class="message-container">
+      <!-- 대화 내용 출력 -->
+
+      <div class="toggle-button-container">
+        <div id="guide-button-container">
+          <div class="toggle-button" id="guide-button" onclick="toggleGuide()" style="display: none;">
+            <img src="static/images/자동차그림_small_파랑.png">
+            <p3>대응 가이드</p3><i class="arrow down" role="img"></i>
+          </div>
+          <div id="guide-text"></div>
+          <div id="guide-content"></div>
+
+          <div id="field-guide-container" style="display: none;">
+            <div class="toggle-button" id="field-guide-button" onclick="toggleFieldGuide()">
+              <img src="static/images/자동차그림_small_회색.png">
+              <p4>현장 가이드</p4><i class="arrow down" role="img"></i>
+            </div>
+            <div id="field-guide-content">
+              <!-- 서버에서 받은 현장 가이드 내용을 출력 -->
+              <div id="field-guide-text"></div>
+              <div id="insurance-Text"></div>
+            </div>
+          </div>
+
+          <div id="picture-guide-container" style="display: none;">
+            <div class="toggle-button" id="picture-guide-button" onclick="togglePictureGuide()">
+              <img src="static/images/자동차그림_small_회색.png">
+              <p4>현장 사진 가이드</p4><i class="arrow down" role="img"></i>
+            </div>
+            <div id="picture-guide-content">
+              <!-- 현장 사진 가이드 내용을 출력 -->
+              <div id="picture-guide-text"></div>
+              <p5>1. 사고 현장 전체 샷을 촬영하세요.</br></p5>
+              <p6>- 주변 도로 상황이 나올 수 있도록 원거리에서 찍어주세요.</br></p6>
+              <p5>2. 타이어 바퀴가 돌아가 있는 방향을 촬영하세요.</br></p5>
+              <p6>- 바퀴가 돌아간 방향은 사고 당시 핸들의 진행 방향이나 사고를 피하기 위한 흔적을 알려줍니다.</br></p6>
+              <p5>3. 상대 차량의 블랙박스 유무를 찍어주세요.</br></p5>
+              <p6>- 블랙박스가 없다며 발뺌하는 경우도 많아요.</br></p6>
+              <p5>4. 차량 번호판을 촬영하세요.</br></p5>
+              <p5>5. 차량의 파손 부위를 확대해서 촬영하세요</br></p5>
+              <p6>- 파손 부위가 차량의 어느 부분에 해당하는지도 같이 촬영하는 것이 좋아요. </br> </p6>
+            </div>
+          </div>
+
+
+          <div id="Agreement-picture-guide-container" style="display: none;">
+            <div class="toggle-button" id="Agreement-picture-guide-button" onclick="toggleAgreementPictureGuide()">
+              <img src="static/images/자동차그림_small_회색.png">
+              <p4>교통사고 신속 처리 대응 협의서 사진 가이드</p4><i class="arrow down" role="img"></i>
+            </div>
+            <div id="Agreement-picture-guide-content">
+              <div id="Agreement-picture-guide-text"></div>
+              <!-- 보험용 사진 가이드 내용을 출력 -->
+              <p5>"교통사고 신속 처리 대응 협의서" 작성을 위한 과정입니다. </br></p5>
+              <p6>- 차량의 "전면"을 촬영해주세요.</br></p6>
+              <p6>- 차량의 "후면"을 촬영해주세요.</br></p6>
+              <p6>- 차량의 "우측면"을 촬영해주세요.</br></p6>
+              <p6>- 차량의 "좌측면"을 촬영해주세요.</br></p6>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+          <div id="ratio-button-container">
+            <div class="toggle-button" id="ratio-button" onclick="toggleRatio()" style="display: none;"><img
+                src="static/images/자동차그림_small_파랑.png">
+              <p3>과실비율</p3><i class="arrow down" role="img"></i>
+            </div>
+            <div id="ratio-content" style="display: none;">
+              <!-- 서버에서 받은 과실비율 내용을 출력 -->
+              <div id="ratio-text"></div>
+              <div id="rate_com_text"></div>
+            </div>
+          </div>
+
+          <div id="agreement-button-container">
+            <div class="toggle-button" id="agreement-button" onclick="toggleAgreement()" style="display: none;"><img
+                src="static/images/자동차그림_small_파랑.png">
+              <p3>교통사고 신속
+                처리 대응 협의서</p3><i class="arrow down" role="img"></i>
+            </div>
+            <div id="agreement-content" style="display: none;">
+              <p1>지금까지 작성하신 내용을 가지고 작성한 <p4>교통사고 신속처리 표준 협의서</p4> 내용입니다.</br>
+                교통사고 신속처리 표준 협의서는 <p4>현재는 보조용으로 작성</p4>되었습니다.</br>
+                보험사와 원활한 처리가 되시길 바랍니다. </p1>
+              <!-- 서버에서 받은 협의서 내용을 출력 -->
+              <div id="agreement-text"></div>
+            </div>
+          </div>
+
+          <div id="summary-button-container">
+            <div class="toggle-button" id="summary-button" onclick="toggleSummary()" style="display: none;"><img
+                src="static/images/자동차그림_small_파랑.png">
+              <p3>요약판례</p3><i class="arrow down" role="img"></i>
+            </div>
+            <div id="summary-content" style="display: none;">
+              <!-- 서버에서 받은 판례요약 내용을 출력 -->
+              <div id="summary-text"></div>
+            </div>
+          </div>
+
+          <div id="lawyer-button-container">
+            <div class="toggle-button" id="lawyer-button" onclick="toggleLawyer()" style="display: none;">
+              <img src="static/images/자동차그림_small_파랑.png">
+              <p3>변호사에게 사연 제보하기</p3><i class="arrow down" role="img"></i>
+            </div>
+            <div id="lawyer-content" style="display: none;">
+              <!-- 변호사에게 사연 제보하기 -->
+              <div id="lawyer-text"></div>
+              <button onclick="modifyStory()" class="custom-button">수정하기</button>
+              <button onclick="submitStory()" class="custom-button">사연 제보하기</button>
+              <div id="input-container" style="display: none;">
+                <input type="text" id="story-input"><button onclick="updateStory()">확인</button>
+              </div>
+            </div>
+          </div>
+          
+
+        </div>
+
+        <!-- <div class="spinner"> 이건 챗지피티 채팅때 사용할 스피너</div> -->
+
+
+      </div>
+    </div>
+    <input type="text" id="user-input" class="input-box" placeholder="입력해주세요." inputmode="search"
+      style="display: block;">
+    <button id="send-btn" class="send-button" type="button">Send</button>
+    <button id="submit-btn" class="submit-button" style="display: none;" type="button"
+      onclick="submitUserInput()">Submit</button>
+
+
+  </div>
+
+  <div id="image-container" style="display: none;">
+    <img id="loading-image" src="static/images/Rocket.gif" alt="loading">
+  </div>
+
+  <div class="popup" id="user-answers-popup" style="display: none;">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeUserAnswersPopup()">&times;</span>
+      <div id="user-answers-container" class="user-answers-container"></div>
+      <p1>내용으로 사고나신 게 맞나요?<br> 맞으시면 제출 버튼을 눌러주세요.</p1>
+      <div class="submit-popup">
+        <button id="submit-btn" class="submit-button" type="button" onclick="sendConversation()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- chat-answer-container 내용 -->
+  <div class="popup" id="chat-user-answers-popup" style="display: none;">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeUserAnswersPopup()">&times;</span>
+      <div id="chat-user-answers-container" class="user-answers-container"></div>
+      <p1>내용으로 사고나신 게 맞나요?<br> 맞으시면 제출 버튼을 눌러주세요.</p1>
+      <div class="submit-popup">
+        <button id="submit-btn" class="submit-button" type="button" onclick="GPTsendUserInput()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+  <!-- <script src="{{ url_for('static', filename='chatbot_client.js') }}"></script> -->
+
+  <script src="/static/chatbot_client.js"></script>
+  <script type="module" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script type="text/javascript" language="javascript">
+    window.addEventListener('load', function () {
+      setTimeout(scrollTo, 0, 0, 1);
+    }, false);
+  </script>
+  <script> var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10
+};
+
+var map = new naver.maps.Map('map', mapOptions);</script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gn2309z2hq"></script>
+</html>

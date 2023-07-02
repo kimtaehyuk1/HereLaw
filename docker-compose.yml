@@ -1,0 +1,62 @@
+services:
+  elasticsearch_for_haystack_app:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+    container_name: elasticsearch_for_haystack_app
+    environment:
+      - discovery.type=single-node
+    networks:
+      - server_search
+
+  haystack_app:
+    container_name: haystack_app
+    build:
+      context: ./haystack_app
+    ports:
+      - 7777:7777
+    depends_on:
+      - elasticsearch_for_haystack_app
+    networks:
+      - server_search
+      - server_server
+
+  backend_app:
+    container_name: backend_app
+    build:
+      context: ./herelaw
+      target: builder
+    ports:
+      - 443:443
+    depends_on:
+      - elasticsearch_for_haystack_app
+      - haystack_app
+      - db
+    networks:
+      - server_server
+      - server_db
+
+  db:
+    image: mysql
+    container_name: db
+    command: '--default-authentication-plugin=mysql_native_password'
+    expose:
+      - 3306
+    environment:
+      - MYSQL_DATABASE=herelaw
+      - MYSQL_ROOT_PASSWORD=12341234
+
+    depends_on:
+      - elasticsearch_for_haystack_app
+      - haystack_app
+    networks:
+      - server_db
+    volumes:
+      - db_var:/var/lib/mysql
+
+networks:
+  server_search:
+  server_server:
+  server_db:
+
+
+volumes:
+  db_var:

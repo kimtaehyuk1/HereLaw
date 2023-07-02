@@ -1,0 +1,23 @@
+FROM ubuntu:latest AS builder
+
+# system 시간과 달라서 문제가 되어 시간 맞춰주는 명령 실행 후 실행 https://magpienote.tistory.com/182
+RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
+
+WORKDIR /service
+COPY . /service
+
+RUN apt update
+RUN apt-get install python3 python3-pip -y
+RUN apt install build-essential -y
+RUN pip3 install pip --upgrade
+RUN pip install -r requirements.txt
+
+# 환경변수
+ENV FLASK_APP app.py
+ENV FLASK_RUN_PORT 7777
+ENV FLASK_RUN_HOST 0.0.0.0
+
+EXPOSE 7777
+
+# 구동 명령
+ENTRYPOINT ["flask", "run"]

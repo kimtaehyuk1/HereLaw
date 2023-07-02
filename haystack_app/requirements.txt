@@ -1,0 +1,2 @@
+flask==2.3.2
+farm-haystack[elasticsearch]==1.16.1

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitude = position.coords.latitude; // 위도
+                    const longitude = position.coords.longitude; // 경도
+                    console.log(latitude, longitude);
+
+                    // AJAX 요청 보내기
+                    $.ajax({
+                        url: '/location', // 서버의 URL
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ latitude, longitude }),
+                        success: function() {
+                            console.log('위도와 경도 정보를 서버에 전송했습니다.');
+                            window.location.href = '/chatbot_test'; 
+                        },
+                        error: function() {
+                            console.log('위도와 경도 정보 전송에 실패했습니다.');
+                        }
+                    });
+
+                }, function(error) {
+                    console.error(error);
+                }, {
+                    enableHighAccuracy: false,
+                    maximumAge: 0,
+                    timeout: Infinity
+                });
+            } else {
+                alert('GPS를 지원하지 않습니다.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            getLocation();
+        });
+    </script>
+</body>
+
+</html>

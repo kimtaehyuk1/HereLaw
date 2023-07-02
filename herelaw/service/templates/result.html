@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HereLaw 결과페이지</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1,width=device-width" />
+  <!-- <meta name="viewport" content="height=device-height, initial-scale=1"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="../static/css/result.css" />
+  <style>
+    @import url("../static/css/result.css") screen and (min-width: 350px) and (max-width:1024px);
+  </style>
+</head>
+
+<body>
+
+  <div id="logo-container">
+    <div id="logo-text">
+      <img src="../static/images\자동차그림.png" width="120px;" alt="자동차 그림" class="car-logo">
+
+      <!-- <H2>당신의 사고에 대한</br>
+        <img src="../static/images\herelaw logo.png" width="150px;">의
+        결론입니다.
+      </H2> -->
+      <H2>당신의 사고에 대한</br>
+        <img src="../static/images\herelaw logo.png" width="150px;">의
+        결론입니다.
+      </H2>
+    </div>
+  </div>
+
+
+  <div id="result-container">
+    <div class="button-container">
+
+      <button class="button" id="rate" onclick="RatePopup()">
+        <h3>내 손 안의 몇 대 몇</h3>
+        <h4>나의 과실비율을 예측해보세요.</h4>
+      </button>
+
+      <button class="button" id="agreement" onclick="AgreementPopup()">
+        <h3>내 손 안의 협의서</h3>
+        <h4>원활한 협의를 위해 작성해보세요.</h4>
+      </button>
+
+
+      <button class="button" id="lawer" onclick="LawerPopup()">
+        <h3>내 손 안의 변호사</h3>
+        <h4>유사 사례를 영상으로 보여드려요.</h4>
+      </button>
+
+      <button class="button" id="law" onclick="LawPopup()">
+        <h3>내 손 안의 판례문</h3>
+        <h4>판례를 알기 쉽게 요약했어요.</h4>
+      </button>
+
+
+    </div>
+
+
+
+    <div class="overlay" id="ratio-overlay">
+      <div class="popup-container">
+        <div class='popup-header-rate'> 내 손 안의 몇 대 몇</div>
+        <div class="popup" id='rate_1'>
+          <div id="rate-popup">
+            <span class="close-button">&times;</span>
+            <div class='rate-popup-text'>
+              <p class="rate-popup-paragraph">
+                이번 사고에서 내 과실은 얼마일까요?<br>
+                HereLaw가 예측한 과실비율입니다. <br>
+              </p>
+              <!-- 과실비율 팝업 내용 -->
+              <div class="rate-box">
+                <p class="yellow-box">과실비율</p>
+                 <p id="ratioValue" class="left-align">{{ rate }}</p>
+              </div>
+              <p class="yellow-box">과실해설</p>
+              <div class="rate-box1">
+                <div id="rate-text">
+                </div>
+                <p id="ratiocomValue" class="left-align">{{ rete_com }}</p>
+              </div>
+            </div>
+          </div>
+          <p class="p1">본 자료는 참고용이며, 보험사마다 결과가 달라질 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="overlay" id="agreement-overlay">
+      <div class="popup-container">
+        <div class='popup-header-agreement'> 내 손 안의 협의서</div>
+        <div class="popup" id='agreement_1'>
+          <div class="agreement-popup">
+
+            <span class="close-button">&times;</span>
+            <p class="agreement-popup-paragraph">
+              꼼꼼히 작성해주신 내용을 바탕으로<br>
+              HereLaw가 작성한 <br> 신속처리 표준 협의서입니다. <br>
+              참고하셔서 원활한 처리가 되시길 바랍니다.<br>
+            </p>
+            <div id="agreement-image" >
+              <div id="agreement-content">
+
+            </div>
+            <div id="agreement-text">
+              사고일시: 2023년 6월 14일 수요일<br>
+              사고장소: 경부고속도로<br>
+              사고당시 날씨: 흐리고 비옴<br>
+              파손부위: 사진 <br>
+              구체적 사고개요: 내용 포함<br>
+              사고약도: 지도 포함<br>
+            </div>
+            <!-- src="static/uploads/과실심의분쟁위원회.png"-->
+            <!-- 교통사고 신속처리 대응 협의서 팝업 사진 업로드 -->
+
+
+            </div>
+
+            <button id="download-button" class="button-style">협의서 다운로드</button>
+
+          </div>
+
+        </div>
+        <p class="p1">본 자료는 참고용입니다.</p>
+      </div>
+
+    </div>
+
+
+ 
+
+
+    
+    <div class="overlay" id="lawer-overlay">
+      <div class="popup-container">
+        <div class='popup-header-lawer'> 내 손 안의 변호사</div>
+        <div class="popup" id='lawer_1'>
+          <p class="lawer-popup-paragraph">
+            나의 사고 사진으로 비슷한 사례를 찾았어요.<br>
+            사고 상황에 대해 시원하게 설명해드립니다.<br>
+            HereLaw가 만든 제보문도 읽어보세요!<br>
+          </p>
+          <div class='lawer-popup-text'>
+
+            <div id="lawer-popup-content">
+              <span class="close-button">&times;</span>
+              <!-- 변호사에게 사연 제보하기 팝업 내용 -->
+              <p class="yellow-box">유사 사례</p>
+              <iframe width="350" height="197" src="https://www.youtube.com/embed/KBcIyBMmGGw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+              
+              <p class="yellow-box">사연 생성</p>
+              <div class='lawer-popup-text-2'>
+              <p id="lawerValue" class="left-align">{{ report }}</p>
+              </div>
+
+            </div>
+
+          </div>
+          <p class="p1">본 자료는 참고용입니다.</p>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="overlay" id="law-overlay">
+      <div class="popup-container">
+        <div class='popup-header-law'> 내 손 안의 판례문</div>
+        <div class="popup" id='law_1'>
+          <div class='law-popup-text'>
+            <p class="law-popup-paragraph">
+              나의 상황과 비슷한 판례를 찾아서<br>
+              쉬운 단어로 짧게 요약해서 보여드립니다.<br>
+            </p>
+            <div id="law-popup-content">
+              <span class="close-button">&times;</span>
+              <div class='law-popup-text-2'>
+              <p id="summaryValue" class="left-align">{{ law }}</p>
+            </div>
+          </div>
+          <p class="p1">본 자료는 참고용입니다.</p>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+<script src="../static/result.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var closeBtns = document.querySelectorAll('.close-btn');
+    var ratiooverlay = document.getElementById('ratio-overlay');
+    var agreementoverlay = document.getElementById('agreement-overlay');
+    var lawoverlay = document.getElementById('law-overlay');
+    var laweroverlay = document.getElementById('lawer-overlay');
+
+    var summaryValue = document.getElementById('summaryValue');
+    var ratioValue = document.getElementById('ratioValue');
+    var ratiocomValue = document.getElementById('ratiocomValue');
+    var lawerValue = document.getElementById('lawerValue');
+  });
+
+  // 가이드 버튼 클릭 시 레이어 팝업 열기
+  document.getElementById('rate').addEventListener('click', function () {
+  });
+  document.getElementById('agreement').addEventListener('click', function () {
+  });
+  document.getElementById('law').addEventListener('click', function () {
+  });
+  document.getElementById('lawer').addEventListener('click', function () {
+
+  });
+
+  // 서버에서 요약 law 값을 가져옴
+  fetch('/lawoverlay')
+    .then(response => response.json())
+    .then(data => {
+      // 가져온 law 값을 팝업 내용에 삽입
+      const law = data.law;
+      summaryValue.textContent = law;
+      console.log(law)
+    });
+
+
+
+  // 서버에서 과실비율 값을 가져옴
+  fetch('/ratiooverlay')
+    .then(response => response.json())
+    .then(data => {
+      // 가져온 rate, 과실비율 해석 값을 팝업 내용에 삽입
+      ratioValue.textContent = data.rate;
+      ratiocomValue.textContent = data.rate_com;
+    });
+
+  // 서버에서 변호사 값을 가져옴
+  fetch('/laweroverlay')
+    .then(response => response.json())
+    .then(data => {
+      // 가져온 report 값을 팝업 내용에 삽입
+      lawerValue.textContent = data.report;
+    });
+
+
+</script>
+
+</html>
