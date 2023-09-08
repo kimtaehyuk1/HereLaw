@@ -20,6 +20,9 @@
 # 🌐클라우드 인프라 구성도🌐
 ![인프라 구성도](https://github.com/kimtaehyuk1/HereLaw/assets/67897827/35302abb-851f-444a-88b3-c68389d7d431)
 
+## CI/CD 파이프라인
+![CI_CD 파이프라인](https://github.com/kimtaehyuk1/HereLaw/assets/67897827/c958c1c4-f716-4707-8937-6bb67d7da8f2)
+
 -----------------------------------------
 # 🧾기획서 파일🧾
 [해커톤 결선 기획서(HereLaw).pdf](https://github.com/kimtaehyuk1/HereLaw/files/11930027/default.pdf)
